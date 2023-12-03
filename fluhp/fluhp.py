@@ -816,8 +816,8 @@ def process_extract_cmd(input_file, args, is_directory = True):
     else:
         annotations = pd.read_csv(f"{args.anno_path}")
     acc_pro_dic = dict(zip(annotations.iloc[:, 0], annotations.iloc[:, 1]))
-    marker_dict, data = annotate_markers(MARKER_PATH + "/human_adaptation_formated.csv",
-                                         MARKER_PATH + "/receptor_binding_alteration.xlsx",
+    marker_dict, data = annotate_markers(MARKER_PATH + "/human_adaptation_formated_formated.csv",
+                                         MARKER_PATH + "/receptor_binding_alteration_formated.csv",
                                          args.receptor_markers)
     renumbering_results = renumber_proteins(
         fasta_path = str(input_file),

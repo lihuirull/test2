@@ -12,7 +12,7 @@ setup(
     description='A tool for predicting influenza virus hosts from sequence data.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/lihuirull/FluHostPredictor',
+    url='https://github.com/lihuirull/test2',
     packages=find_packages(),
     include_package_data=True,  # 包含 MANIFEST.in 中指定的非代码文件
     entry_points={
