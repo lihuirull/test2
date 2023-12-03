@@ -873,10 +873,10 @@ def main():
         predictions = predict_host.predict_new_data(
             str(Path(args.input)),
             args.model_path,
-            args.threshold,
-            DATA_PATH,
+            args.threshold_path,
+            args.top_features_path,
             args.output_directory,
-            args.prefix,
+            args.prefix
         )
         print(predictions)
         print(f"Predictions completed.")
