@@ -265,10 +265,10 @@ def annotate_markers(adaptability_path, receptor_path, use_receptor = True):
         A dictionary with annotated markers.
     """
     # Load markers from files
-    adapt_dict = load_markers(adaptability_path)
+    adapt_dict, data1 = load_markers(adaptability_path)
     recep_dict = {}
     if use_receptor:
-        recep_dict = load_markers(receptor_path)
+        recep_dict,data2 = load_markers(receptor_path)
 
     # Combine the dictionaries
     marker_dict = {**adapt_dict, **recep_dict}
@@ -279,6 +279,7 @@ def annotate_markers(adaptability_path, receptor_path, use_receptor = True):
     # Convert HA/NA residues to H3/N2 numbering and update marker_dict
     marker_dict = convert_HA_residues(marker_dict, STRUCTURE_PATH)
 
+    data = pd.concat([data1,data2])
     # Duplicated
     marker_dict = {i: list(set(j)) for i, j in marker_dict.items()}
 
@@ -737,8 +738,8 @@ def find_files_with_string(directory, string):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(prog = 'fluhp_ori',
-                                     description = 'fluhp_ori command line tool for flu marker '
+    parser = argparse.ArgumentParser(prog = 'fluhp',
+                                     description = 'fluhp command line tool for flu marker '
                                                    'extraction, annotation and host prediction.')
     subparsers = parser.add_subparsers(dest = 'subcommand', help = 'Sub-commands')
 

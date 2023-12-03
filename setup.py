@@ -17,7 +17,7 @@ setup(
     include_package_data=True,  # 包含 MANIFEST.in 中指定的非代码文件
     entry_points={
         'console_scripts': [
-            'fluhp_ori=fluhp_ori.fluhp:main',  # 指向 src/fluhp/fluhp.py 中的 main 函数
+            'fluhp=fluhp.fluhp:main',  # 指向 src/fluhp/fluhp.py 中的 main 函数
         ],
     },
     package_data={
